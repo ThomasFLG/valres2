@@ -1,12 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
 from app.model.utilisateur import Utilisateur
+from . import set_window_size
 
 class LoginWindow:
     """Fenêtre de connexion et gestion des événements"""
     
     def __init__(self, master, on_login_success):
         self.master = master
+        set_window_size(self.master)
         self.on_login_success = on_login_success
         self.create_widgets()
 

@@ -1,12 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
 from app.model.utilisateur import Utilisateur
+from . import set_window_size
 
 class RegistrationWindow(tk.Toplevel):
     """Fenêtre d'inscription"""
     
     def __init__(self, master):
         super().__init__(master)
+        set_window_size(self)
         self.title("Créer un compte")
         self.create_widgets()
 

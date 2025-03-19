@@ -2,12 +2,14 @@ import tkinter as tk
 from tkinter import filedialog
 import xml.etree.ElementTree as ET
 from .components.xml_loader import load_xml_data  # Composant réutilisable
+from . import set_window_size
 
 class MainApplication:
     """Interface principale après connexion"""
     
     def __init__(self, master):
         self.master = master
+        set_window_size(self.master)
         self.master.title("Application principale")
         self.create_widgets()
 

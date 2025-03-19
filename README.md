@@ -15,10 +15,16 @@ Voici un aperçu de la structure du projet :
 - **valres2/**
   - **app/**
     - `__init__.py`  # Fichier d'initialisation du package
-    - `gui.py`  # Contient la classe Application (interface graphique)
-    - `logic.py`  # Contient la logique métier (fonction ajouter, etc.)
+    - **gui/**  # Dossier pour les composants de l'interface graphique
+      - `__init__.py`  # Fichier d'initialisation du package GUI
+      - `login.py`  # Gère la fenêtre de connexion
+      - `registration.py`  # Gère la fenêtre d'inscription
+      - `main_window.py`  # Gère l'application principale
+      - **components/**  # Dossier pour les composants réutilisables
+        - `xml_loader.py`  # Gestion du chargement de fichiers XML
     - `controller.py`  # Contient la classe Controller
-    - **model/**
+    - `logic.py`  # Contient la logique métier (fonctions utilitaires)
+    - **model/**  # Dossier pour les modèles de données
       - `__init__.py`  # Fichier d'initialisation du package
       - `utilisateur.py`  # Classe Utilisateur et Structure
       - `xml_parser.py`  # Fonction de traitement des fichiers XML
@@ -26,13 +32,12 @@ Voici un aperçu de la structure du projet :
     - **images/**  # Contient des images pour l'UI
     - **fonts/**  # Contient des polices
     - `style.css`  # Fichier de style CSS
-  - **data/**  # Dossier pour les fichiers SQL
-    - `utilisateurs.db`  # Données de connexion des utilisateurs
+  - **data/**  # Dossier pour les fichiers de données
+    - `utilisateurs.db`  # Base de données des utilisateurs
   - **tests/**  # Dossier pour les tests unitaires
     - `__init__.py`  # Fichier d'initialisation du package
     - `test_gui.py`  # Tests pour l'interface graphique
   - `main.py`  # Point d'entrée du projet
-
 
 ### Explication :
 

@@ -26,14 +26,12 @@ Voici un aperçu de la structure du projet :
     - **images/**  # Contient des images pour l'UI
     - **fonts/**  # Contient des polices
     - `style.css`  # Fichier de style CSS
+  - **data/**  # Dossier pour les fichiers SQL
+    - `utilisateurs.db`  # Données de connexion des utilisateurs
   - **tests/**  # Dossier pour les tests unitaires
     - `__init__.py`  # Fichier d'initialisation du package
     - `test_gui.py`  # Tests pour l'interface graphique
-    - `test_logic.py`  # Tests pour les fonctions de logique métier
-    - `test_utilisateur.py`  # Tests pour les classes Utilisateur et Structure
-    - `test_xml_parser.py`  # Tests pour le parsing du XML
   - `main.py`  # Point d'entrée du projet
-  - `utilisateurs.xml`  # Exemple de fichier XML avec les utilisateurs
 
 
 ### Explication :

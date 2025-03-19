@@ -1,13 +1,83 @@
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog,messagebox
 import xml.etree.ElementTree as ET
-from app.logic import ajouter
+from app.model.utilisateur import Utilisateur
 
 class Application:
     def __init__(self):
         self.window = tk.Tk()
-        self.window.title("Mon Application")
-        self.create_widgets()
+        self.window.title("Connexion")
+        self.window.geometry("500x350")  # Taille initiale (ajuste cette valeur)
+        self.window.minsize(500, 350)    # Taille minimale
+        self.window.maxsize(800, 600)    # Taille maximale
+        self.create_login_widgets()
+    
+    def create_login_widgets(self):
+        """Crée l'interface de connexion."""
+        tk.Label(self.window, text="Email:").pack()
+        self.email_entry = tk.Entry(self.window)
+        self.email_entry.pack()
+
+        tk.Label(self.window, text="Mot de passe:").pack()
+        self.password_entry = tk.Entry(self.window, show="*")
+        self.password_entry.pack()
+
+        self.login_button = tk.Button(self.window, text="Se connecter", command=self.login)
+        self.login_button.pack()
+
+        self.register_button = tk.Button(self.window, text="Créer un compte", command=self.register)
+        self.register_button.pack()
+
+    def login(self):
+        """Vérifie les identifiants et ouvre l'application si connexion réussie."""
+        email = self.email_entry.get()
+        password = self.password_entry.get()
+
+        if Utilisateur.connexion(email, password):
+            messagebox.showinfo("Succès", "Connexion réussie !")
+            self.open_main_application()
+        else:
+            messagebox.showerror("Erreur", "Identifiants incorrects.")
+
+    def register(self):
+        """Affiche la fenêtre de création de compte."""
+        register_window = tk.Toplevel(self.window)
+        register_window.title("Créer un compte")
+
+        tk.Label(register_window, text="Nom:").pack()
+        nom_entry = tk.Entry(register_window)
+        nom_entry.pack()
+
+        tk.Label(register_window, text="Email:").pack()
+        email_entry = tk.Entry(register_window)
+        email_entry.pack()
+
+        tk.Label(register_window, text="Mot de passe:").pack()
+        password_entry = tk.Entry(register_window, show="*")
+        password_entry.pack()
+
+        def create_account():
+            """Crée un nouvel utilisateur."""
+            nom = nom_entry.get()
+            email = email_entry.get()
+            password = password_entry.get()
+
+            if Utilisateur.creer_utilisateur(nom, email, password):
+                messagebox.showinfo("Succès", "Compte créé avec succès !")
+                register_window.destroy()
+            else:
+                messagebox.showerror("Erreur", "Cet email est déjà utilisé.")
+
+        tk.Button(register_window, text="S'inscrire", command=create_account).pack()
+
+    def open_main_application(self):
+        """Ouvre l'interface principale après connexion réussie."""
+        self.window.destroy()  # Ferme la fenêtre de connexion
+        main_window = tk.Tk()
+        main_window.title("Application principale")
+        tk.Label(main_window, text="Bienvenue !").pack()
+        main_window.mainloop()
+
     
     def create_widgets(self):
         # Label d'accueil

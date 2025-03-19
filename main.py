@@ -1,5 +1,5 @@
-from app.gui import Application
+from app.controller import Controller
 
 if __name__ == "__main__":
-    app = Application()
-    app.run()
+    controller = Controller()
+    controller.run()

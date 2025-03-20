@@ -40,4 +40,7 @@ Voici un aperçu de la structure du projet :
   - `main.py`  # Point d'entrée du projet
 
 Fait par Thomas Font et Joachim Morf, étudiants en 2ème année de BTS SIO
+
+Lien vers la fiche d'activité
 ```markdown
+https://docs.google.com/document/d/1brFT_2QU-twPgBw3h5RoUS3VCu_Rcw7VeMgN08du_zc/edit?usp=sharing

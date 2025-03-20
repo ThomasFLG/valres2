@@ -1,8 +1,8 @@
 import tkinter as tk
 
 # Configuration globale pour les fenêtres
-WINDOW_WIDTH = 600
-WINDOW_HEIGHT = 400
+WINDOW_WIDTH = 1000
+WINDOW_HEIGHT = 600
 
 def set_window_size(window):
     """

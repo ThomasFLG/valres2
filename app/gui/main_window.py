@@ -31,11 +31,11 @@ class MainApplication:
         home_button.pack(side=tk.LEFT, padx=10, pady=5)
 
         # Bouton pour importation utilisateur XML
-        load_button = tk.Button(navbar, text="Importer Utilisateurs", command=self.importer_utilisateurs)
+        load_button = tk.Button(navbar, text="Importer XML Utilisateurs", command=self.importer_utilisateurs)
         load_button.pack(side=tk.LEFT, padx=10, pady=5)
 
         # Bouton pour afficher les utilisateurs
-        users_button = tk.Button(navbar, text="Utilisateurs", command=self.show_utilisateurs)
+        users_button = tk.Button(navbar, text="Liste Utilisateurs", command=self.show_utilisateurs)
         users_button.pack(side=tk.LEFT, padx=10, pady=5)
 
         # Bouton pour se déconnecter
@@ -43,14 +43,36 @@ class MainApplication:
         logout_button.pack(side=tk.RIGHT, padx=10, pady=5)
 
     def show_accueil(self):
-        """Affiche la page d'accueil."""
+        """Affiche la page d'accueil avec une présentation de l'application."""
         # Nettoyer le contenu précédent
         for widget in self.content_frame.winfo_children():
             widget.destroy()
 
-        # Message de bienvenue
-        welcome_label = tk.Label(self.content_frame, text="Bienvenue dans l'application !")
-        welcome_label.pack(pady=20)
+        # Titre de la page d'accueil
+        title_label = tk.Label(self.content_frame, text="Bienvenue dans l'application de facturation des réservations", font=("Helvetica", 16, "bold"))
+        title_label.pack(pady=20)
+
+        # Texte de présentation de l'application
+        presentation_text = """
+        Cette application a été conçue pour simplifier et automatiser la gestion des réservations
+        des salles de la Maison des Ligues (M2L). Elle permet de :
+
+        - Récupérer et traiter les fichiers XML des réservations hebdomadaires.
+        - Calculer automatiquement les tarifs en fonction des salles et des utilisateurs.
+        - Générer des bordereaux récapitulatifs des réservations.
+        - Exporter les récapitulatifs au format PDF pour envoi au Conseil Régional.
+
+        Cette application a été développée pour remplacer le processus manuel actuel, source d'erreurs
+        et de perte de temps, en offrant une solution informatique robuste et efficace.
+        """
+
+        # Afficher le texte de présentation
+        presentation_label = tk.Label(self.content_frame, text=presentation_text, justify=tk.LEFT, font=("Helvetica", 12))
+        presentation_label.pack(pady=10, padx=20)
+
+        # Bouton pour commencer
+        start_button = tk.Button(self.content_frame, text="Commencer", command=self.show_utilisateurs, font=("Helvetica", 12))
+        start_button.pack(pady=20)
 
     def show_utilisateurs(self):
         """Affiche la liste des utilisateurs."""

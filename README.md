@@ -39,20 +39,5 @@ Voici un aperçu de la structure du projet :
     - `test_gui.py`  # Tests pour l'interface graphique
   - `main.py`  # Point d'entrée du projet
 
-### Explication :
-
-1. **Bloc de code (` ``` `)** :
-   L'arborescence est mise dans un bloc de code, entourée de triples backticks (\`\`\`). Cela crée un format monospaced et garantit que l'indentation et la structure sont respectées dans le fichier `README.md`.
-
-2. **Indentation** :
-   Markdown garde l'indentation correcte dans un bloc de code, ce qui signifie que ton projet sera toujours bien lisible.
-
-3. **Lisibilité** :
-   En utilisant des blocs de code, tu évites que le texte ne se mélange avec le reste du contenu de ton fichier `README.md`, ce qui rend l'arborescence du projet plus propre et facile à lire.
-
-### **Autre méthode (listes imbriquées)** :
-Si tu préfères utiliser des listes pour décrire chaque dossier et fichier, tu peux aussi opter pour des listes à puces imbriquées, comme suit :
-
-```markdown
-
 Fait par Thomas Font et Joachim Morf, étudiants en 2ème année de BTS SIO
+```markdown
